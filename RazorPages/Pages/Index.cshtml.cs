@@ -12,9 +12,10 @@ namespace RazorPages.Pages
             _logger = logger;
         }
 
+
         public void OnGet()
         {
-
+            
         }
     }
 }
