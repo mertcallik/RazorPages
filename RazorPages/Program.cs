@@ -1,10 +1,14 @@
-using RazorPages.Repository;
+using Microsoft.EntityFrameworkCore;
+using RazorPages.Data.Abstract;
+using RazorPages.Data.Concreate;
+using RazorPages.Data.Concreate.EfCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
+builder.Services.AddScoped<IEmployeeRepository, EfEmployeeRepository>();
+builder.Services.AddDbContext<DataContext>(options=>options.UseMySql(builder.Configuration.GetConnectionString("mysql_connection"),ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("mysql_connection"))));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

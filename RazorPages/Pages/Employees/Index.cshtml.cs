@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using RazorPages.Data.Abstract;
 using RazorPages.Models;
-using RazorPages.Repository;
 
 namespace RazorPages.Pages.Employees
 {

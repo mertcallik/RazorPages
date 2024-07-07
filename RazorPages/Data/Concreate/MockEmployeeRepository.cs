@@ -1,6 +1,7 @@
-﻿using RazorPages.Models;
+﻿using RazorPages.Data.Abstract;
+using RazorPages.Models;
 
-namespace RazorPages.Repository
+namespace RazorPages.Data.Concreate
 {
     public class MockEmployeeRepository : IEmployeeRepository
     {
